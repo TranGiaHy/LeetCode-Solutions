@@ -14,14 +14,9 @@ class Solution(object):
         # Duyệt qua từng đứa trẻ (candy đại diện cho số kẹo của 1 đứa)
         for candy in candies:
             # ktra Nếu số kẹo hiện tại + số kẹo thêm >= Kẹo của trẻ có nhiều nhất
-            if candy + extraCandies >= max_candy:
-                # Thêm true vào ds nếu >= Kẹo của trẻ có nhiều nhất
-                result.append(True)
-            else:
-                # Thêm false vào ds nếu <= Kẹo của trẻ có nhiều nhất
-                result.append(False)
+            # Thêm True vào ds nếu >= Kẹo của trẻ có nhiều nhất
+            # Thêm False vào ds nếu <= Kẹo của trẻ có nhiều nhất
+            result.append(candy + extraCandies >= max_candy)
 
         # trả về kqua
         return result
-
-        
