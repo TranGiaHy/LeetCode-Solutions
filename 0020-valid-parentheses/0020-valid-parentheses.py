@@ -4,25 +4,27 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        # Khởi tạo một stack rỗng
-        stack = []
 
-        # { "key": "value" }. Hãy dùng ngoặc ĐÓNG làm key, ngoặc MỞ làm value.
+        stack = []
+        # mapping = {"key":"value"}
         mapping = {")":"(", "]":"[", "}":"{"}
 
-        # Duyệt qua từng ký tự 'char' trong chuỗi 's'
+        # Vòng lặp lấy từng ký tự char trong chuỗi s
         for char in s:
-            #TH1
-            if char in mapping :
-
+            # Trường hợp : nếu là ngoặc đóng
+            # ktra nếu ký tự char của chuỗi s có trong mapping có phải là key hay ko
+            if char in mapping:
+            
+                # Lấy ngoặc mở trên đỉnh stack ra để kiểm tra (gán vào top_element)
+                # Nếu trong stack rỗng thì trả về kí tự "#"
                 top_element = stack.pop() if stack else "#"
 
+                # ktra (top_element) khác ký tự char trong mapping trả về false
                 if mapping[char] != top_element:
+                    return False
 
-                    return False # Game Over, trả về True hay False?
-            #TH2
+            # Trường hợp : nếu là ngoặc mở thì nhét ký tự vào stack
             else:
-                # Nhét 'char' vào đỉnh stack
                 stack.append(char)
 
         return len(stack) == 0
