@@ -5,6 +5,7 @@
 |  |
 | ------- |
 | [0088-merge-sorted-array](https://github.com/TranGiaHy/LeetCode-Solutions/tree/master/0088-merge-sorted-array) |
+| [1431-kids-with-the-greatest-number-of-candies](https://github.com/TranGiaHy/LeetCode-Solutions/tree/master/1431-kids-with-the-greatest-number-of-candies) |
 | [1662-check-if-two-string-arrays-are-equivalent](https://github.com/TranGiaHy/LeetCode-Solutions/tree/master/1662-check-if-two-string-arrays-are-equivalent) |
 ## Two Pointers
 |  |
