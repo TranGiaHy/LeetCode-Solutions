@@ -4,7 +4,6 @@ class Solution(object):
         :type moves: str
         :rtype: bool
         """
-
         # Khởi tạo 2 biến x và y là tọa độ gốc 
         x = 0 # Trục ngang
         y = 0 # Trục dọc
