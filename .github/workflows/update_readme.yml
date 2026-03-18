@@ -1,0 +1,35 @@
+name: Auto Update README Table
+
+# Lệnh này bảo bot chạy mỗi khi có code mới đẩy lên nhánh master
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Bước 1: Bot copy code của bạn về máy chủ của nó
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Bước 2: Bot cài đặt môi trường Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      # Bước 3: Bot chạy kịch bản bạn vừa viết
+      - name: Run Python script
+        run: python update_readme.py
+
+      # Bước 4: Bot lưu lại thay đổi và tự đẩy (push) ngược lại lên repo của bạn
+      - name: Commit and Push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add README.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: Auto-update README table" && git push)
