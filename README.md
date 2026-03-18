@@ -11,3 +11,19 @@ Repository này lưu trữ các bài giải LeetCode của mình, chủ yếu đ
 
 ## 📚 Danh sách bài tập
 
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Hash Table
+|  |
+| ------- |
+| [0383-ransom-note](https://github.com/TranGiaHy/LeetCode-Solutions/tree/master/0383-ransom-note) |
+## String
+|  |
+| ------- |
+| [0383-ransom-note](https://github.com/TranGiaHy/LeetCode-Solutions/tree/master/0383-ransom-note) |
+## Counting
+|  |
+| ------- |
+| [0383-ransom-note](https://github.com/TranGiaHy/LeetCode-Solutions/tree/master/0383-ransom-note) |
+<!---LeetCode Topics End-->
