@@ -5,8 +5,10 @@ on:
     branches:
       - master
       - main
+    # Chỉ chạy khi có sự thay đổi trong các thư mục bài tập hoặc file script
+    paths-ignore:
+      - 'README.md' 
 
-# THÊM ĐOẠN NÀY ĐỂ CẤP QUYỀN GHI CHO BOT:
 permissions:
   contents: write
 
@@ -17,6 +19,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Lấy toàn bộ lịch sử để tránh lỗi khi commit
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -31,4 +35,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
           git add README.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: Auto-update README table" && git push)
+          # Chỉ commit nếu có sự thay đổi thực sự trong README
+          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: Auto-update README table [skip ci]" && git push)
